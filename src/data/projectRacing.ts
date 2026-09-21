@@ -1,0 +1,26 @@
+import type { Project } from './projectTypes'
+
+export const carRacingLap: Project = {
+  id: 'car-racing-lap',
+  slug: 'car-racing-lap',
+  title: 'Car Racing Lap',
+  valueProposition: 'An interactive racing telemetry experience built around lap rhythm and driver comparison.',
+  category: 'Interactive frontend experience',
+  shortDescription: 'APEX telemetry interface with deterministic lap simulation, charts, circuit map, and replay.',
+  description: 'Car Racing Lap presents the APEX fictional racing telemetry interface: driver, lap, and sector selection over deterministic telemetry with synchronized charts, a live SVG circuit map, replay controls, sector analysis, tires, strategy, and track views.',
+  tech: ['React', 'TypeScript', 'Recharts', 'SVG'],
+  imageLabel: 'APEX racing telemetry engineering interface',
+  accent: 'rose',
+  liveUrl: '',
+  sourceUrl: '',
+  status: 'Interactive prototype',
+  isConcept: false,
+  problem: 'Make lap performance readable as rhythm rather than a single number: speed, RPM, throttle, brake, gear, fuel, and G-force across sectors, drivers, and laps.',
+  approach: 'Kept telemetry deterministic and internally consistent in a dedicated data model. Driver characteristics and lap number drive speed, inputs, gears, fuel, tires, and lap times, with selection, sector emphasis, playback, scrubbing, and comparative views.',
+  technical: 'Built with React 19, TypeScript, Vite, Recharts, Lucide, and CSS custom properties. The model generates 96 distance-indexed samples per lap with synchronized hover, sector ranges, tire derivation, lap-time formatting, and keyboard-focusable controls with reduced-motion support.',
+  challenges: 'Keeping chart cursor, circuit marker, metrics, sector panels, and comparisons consistent while staying responsive and accessible.',
+  outcome: 'A responsive engineering-room interface with deterministic telemetry, live and replay modes, sector and driver analysis, fuel/tire/strategy context, and clearly labeled simulated data.',
+  technologies: ['React', 'TypeScript', 'Vite', 'Recharts', 'Lucide', 'SVG', 'CSS custom properties'],
+  features: ['Driver, lap, and sector selectors update the full surface', 'Deterministic speed, RPM, throttle, brake, gear, fuel, G-force model', 'Synchronized chart cursor with sector emphasis', 'SVG circuit map with live car marker', 'Live and replay modes with play, pause, restart, scrub', 'Sector, driver, tire, strategy, and track views'],
+  result: 'Interactive prototype using clearly labeled simulated data; no real driver, team, circuit, or series affiliation.',
+}

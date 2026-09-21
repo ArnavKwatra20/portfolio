@@ -1,0 +1,26 @@
+import type { Project } from './projectTypes'
+
+export const processAnalyzer: Project = {
+  id: 'process-strength-analyzer',
+  slug: 'process-strength-analyzer',
+  title: 'Process Strength Analyzer',
+  valueProposition: 'A local read-only Windows diagnostics workstation for observable system behavior.',
+  category: 'Full-stack systems dashboard',
+  shortDescription: 'A read-only developer diagnostics workstation for processes, resources, and network review.',
+  description: 'Process Strength Analyzer is a local, read-only developer diagnostics workstation for understanding observable Windows system behavior. It is not an antivirus, and heuristic observations are workload review signals, not malware verdicts.',
+  tech: ['React', 'TypeScript', 'Express', 'Recharts'],
+  imageLabel: 'Process Strength Analyzer diagnostics dashboard',
+  accent: 'cyan',
+  liveUrl: 'https://client-ruddy-psi.vercel.app',
+  sourceUrl: '',
+  status: 'Working prototype',
+  isConcept: false,
+  problem: 'Understand what a Windows machine is observably doing — processes, parent/child links, resources, and local network connections — in one transparent read-only workstation.',
+  approach: 'Built an Express read-only API over PowerShell/CIM and netstat collection, paired with a React UI with overview, explorer, tree, network, analysis, events, and settings views. No arbitrary shell execution or process termination.',
+  technical: 'Client: React 19, TypeScript, Vite 6, Recharts, Lucide. Server: Express 5, TypeScript, CORS allowlist, rate limiting, bearer auth, zod validation. Deployment uses a Vercel UI with a serverless relay through Cloudflare Tunnel to the local Windows API.',
+  challenges: 'Keeping collection fast and safe with caching, selective owner lookup, permission-aware Unavailable fields, and resilient tunnel-backed remote data.',
+  outcome: 'A working diagnostics workstation with process explorer and tree, resource charts and history, TCP/UDP inspection, transparent heuristic observations, adjustable polling, and authenticated API.',
+  technologies: ['React', 'TypeScript', 'Vite', 'Express', 'Recharts', 'Lucide', 'PowerShell/CIM', 'netstat', 'Vercel', 'Cloudflare Tunnel'],
+  features: ['Process explorer with search, filters, sorting, detail view', 'Process tree from PID to PPID links', 'CPU, memory, disk, network charts with history', 'TCP/UDP inspection with owning process names', 'Transparent NORMAL / REVIEW / ELEVATED observations', 'Configurable 1s / 2s / 5s monitoring interval'],
+  result: 'Working prototype. Live frontend documented at client-ruddy-psi.vercel.app; remote live Windows data depends on the authenticated tunnel being online.',
+}

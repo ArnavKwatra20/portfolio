@@ -1,0 +1,26 @@
+import type { Project } from './projectTypes'
+
+export const cafeBlues: Project = {
+  id: 'cafe-blues',
+  slug: 'cafe-blues',
+  title: 'Cafe Blues',
+  valueProposition: 'A premium fictional cafe website focused on menu clarity and reservations.',
+  category: 'Business / marketing website',
+  shortDescription: 'A polished fictional cafe website demonstrating responsive layouts and menu presentation.',
+  description: 'Cafe Blues is a portfolio concept for a fictional premium urban cafe. It focuses on visual hierarchy, menu browsing, business information, and reservation calls-to-action across mobile and desktop.',
+  tech: ['React', 'TypeScript', 'React Router', 'Custom CSS'],
+  imageLabel: 'Cafe Blues editorial cafe concept',
+  accent: 'amber',
+  liveUrl: '',
+  sourceUrl: '',
+  status: 'Portfolio concept',
+  isConcept: true,
+  problem: 'Create a modern cafe website that feels premium while keeping menu, hours, location, and reservations easy to discover.',
+  approach: 'Structured the site around Home, Menu, About, and Contact routes with data-driven menu content, category filters, reservation and contact flows, and centralized content modules.',
+  technical: 'Built with React, TypeScript, Vite, and React Router, plus a custom CSS design system, lucide-react icons, and Framer Motion reveals. Menu and gallery content live in centralized data modules. Forms are UI-only with validation and local success states.',
+  challenges: 'Balancing editorial atmosphere with usability so the menu and reservation path stay easy to find on small screens.',
+  outcome: 'A complete fictional business website with responsive routes, filterable menu presentation, reservation and contact flows, and accessibility details.',
+  technologies: ['React', 'TypeScript', 'Vite', 'React Router', 'Custom CSS', 'lucide-react', 'Framer Motion'],
+  features: ['Responsive Home, Menu, About, Contact routes', 'Data-driven menu with filters and vegetarian badges', 'Reservation modal and contact form validation', 'Reveal motion with reduced-motion support', 'Semantic headings, labeled fields, focus states'],
+  result: 'Portfolio concept — fictional business project, not a real client engagement.',
+}
