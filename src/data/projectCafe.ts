@@ -12,7 +12,7 @@ export const cafeBlues: Project = {
   imageLabel: 'Cafe Blues editorial cafe concept',
   accent: 'amber',
   liveUrl: '',
-  sourceUrl: '',
+  sourceUrl: 'https://github.com/ArnavKwatra20/cafe-blues',
   status: 'Portfolio concept',
   isConcept: true,
   problem: 'Create a modern cafe website that feels premium while keeping menu, hours, location, and reservations easy to discover.',

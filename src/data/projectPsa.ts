@@ -12,7 +12,7 @@ export const processAnalyzer: Project = {
   imageLabel: 'Process Strength Analyzer diagnostics dashboard',
   accent: 'cyan',
   liveUrl: 'https://client-ruddy-psi.vercel.app',
-  sourceUrl: '',
+  sourceUrl: 'https://github.com/ArnavKwatra20/process-strength-analyzer',
   status: 'Working prototype',
   isConcept: false,
   problem: 'Understand what a Windows machine is observably doing (processes, parent/child links, resources, and local network connections) in one transparent read-only workstation.',

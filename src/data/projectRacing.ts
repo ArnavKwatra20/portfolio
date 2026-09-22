@@ -12,7 +12,7 @@ export const carRacingLap: Project = {
   imageLabel: 'APEX racing telemetry engineering interface',
   accent: 'rose',
   liveUrl: '',
-  sourceUrl: '',
+  sourceUrl: 'https://github.com/ArnavKwatra20/apex-racing-telemetry',
   status: 'Interactive prototype',
   isConcept: false,
   problem: 'Make lap performance readable as rhythm rather than a single number: speed, RPM, throttle, brake, gear, fuel, and G-force across sectors, drivers, and laps.',
