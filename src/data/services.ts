@@ -2,27 +2,30 @@ export type Service = {
   title: string
   summary: string
   points: string[]
+  caseStudySlug: string
+  caseStudyLabel: string
 }
 
 export const services: Service[] = [
   {
-    title: 'Web Development',
-    summary: 'Custom websites and product interfaces built with a clear focus on usability, speed, and modern frontend craft.',
-    points: ['React + TypeScript builds', 'Responsive frontends', 'Modern UI implementation'],
+    title: 'Websites',
+    summary: 'Modern business websites and landing pages, designed to look considered and read clearly on every screen.',
+    points: ['Business and marketing sites', 'Landing pages', 'Responsive, accessible builds'],
+    caseStudySlug: 'cafe-blues',
+    caseStudyLabel: 'Cafe Blues',
   },
   {
-    title: 'Landing Pages',
-    summary: 'Focused marketing pages designed to clearly explain value and help visitors take the next step.',
-    points: ['Launch-ready messaging', 'Clear conversion flow', 'Mobile-first experience'],
+    title: 'Web Apps',
+    summary: 'Functional web applications and dashboards: typed data, clear states, and interfaces that stay readable under real use.',
+    points: ['React and TypeScript applications', 'Dashboards and data views', 'REST APIs with Express'],
+    caseStudySlug: 'process-strength-analyzer',
+    caseStudyLabel: 'Process Strength Analyzer',
   },
   {
-    title: 'UI/UX Implementation',
-    summary: 'Translating design direction into polished interfaces with careful attention to interaction details and accessibility.',
-    points: ['Design-to-code handoff', 'Accessible patterns', 'Refined interactions'],
-  },
-  {
-    title: 'Website Redesigns',
-    summary: 'Refreshing outdated sites into cleaner, clearer modern experiences that feel more premium and easier to use.',
-    points: ['Structure and flow improvement', 'Content clarity', 'Visual modernisation'],
+    title: 'Digital Experiences',
+    summary: 'Interactive frontend work where motion, data, and interface design carry the experience.',
+    points: ['Interactive interfaces', 'Data visualization', 'Polished micro-interactions'],
+    caseStudySlug: 'car-racing-lap',
+    caseStudyLabel: 'Car Racing Lap',
   },
 ]

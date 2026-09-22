@@ -24,62 +24,106 @@ export function Contact() {
     setFormData({ name: '', email: '', message: '' })
   }
 
+  const focusName = () => {
+    document.getElementById('contact-name')?.focus()
+  }
+
   return (
-    <section id="contact" className="border-b border-ink">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 md:py-20 lg:grid-cols-12">
-        <div className="lg:col-span-5">
-          <p className="font-mono-x text-[12px] uppercase tracking-[0.2em] text-ink-faint">07 / Contact</p>
-          <h2 className="font-display mt-4 text-3xl font-medium leading-tight tracking-tight text-ink md:text-4xl">
-            Tell me what needs building.
+    <section id="contact" className="border-b border-line">
+      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-28">
+        <div data-reveal>
+          <p className="font-mono-x text-[11px] uppercase tracking-[0.3em] text-accent">Contact</p>
+          <h2 className="font-display mt-6 text-[clamp(2.6rem,8.5vw,7rem)] font-light uppercase leading-[0.96] tracking-tight text-ink">
+            Have something
+            <br />
+            worth building<span className="text-accent">?</span>
           </h2>
-          <p className="mt-4 text-[15px] leading-7 text-ink-soft">
-            Include the kind of site or tool, two or three reference points, and when you need it.
+          <p className="font-display mt-6 text-[clamp(1.1rem,2vw,1.5rem)] italic text-ink-soft">
+            Let&apos;s create something exceptional.
           </p>
-          <dl className="mt-8 space-y-4 border-t border-ink pt-6">
-            <div className="flex items-baseline justify-between gap-4">
-              <dt className="font-mono-x text-[11px] uppercase tracking-[0.18em] text-ink-faint">GitHub</dt>
-              <dd className="text-sm text-ink">
-                <a href={site.githubUrl} target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:text-accent">
-                  {site.githubUrl.replace('https://', '')}
-                </a>
-              </dd>
-            </div>
-            <div className="flex items-baseline justify-between gap-4">
-              <dt className="font-mono-x text-[11px] uppercase tracking-[0.18em] text-ink-faint">Email</dt>
-              <dd className="text-sm text-ink">
-                {site.email ? (
-                  <a href={`mailto:${site.email}`} className="underline underline-offset-4 hover:text-accent">
-                    {site.email}
-                  </a>
-                ) : (
-                  <span className="text-ink-faint">Shared after first reply</span>
-                )}
-              </dd>
-            </div>
-          </dl>
         </div>
-        <form onSubmit={handleSubmit} className="border border-ink bg-field p-6 md:p-8 lg:col-span-7" noValidate>
-          <div className="grid gap-6 sm:grid-cols-2">
-            <label className="block">
-              <span className="font-mono-x text-[11px] uppercase tracking-[0.18em] text-ink-faint">Your name</span>
-              <input type="text" name="name" aria-label="Name" value={formData.name} onChange={handleChange} placeholder="Your name" className="mt-2 w-full border border-ink bg-white px-4 py-3 text-[15px] text-ink placeholder:text-ink-faint" />
-            </label>
-            <label className="block">
-              <span className="font-mono-x text-[11px] uppercase tracking-[0.18em] text-ink-faint">Email</span>
-              <input type="email" name="email" aria-label="Email" value={formData.email} onChange={handleChange} placeholder="you@company.com" className="mt-2 w-full border border-ink bg-white px-4 py-3 text-[15px] text-ink placeholder:text-ink-faint" />
-            </label>
+
+        <div data-reveal className="mt-10 flex flex-wrap items-center gap-5">
+          <button
+            type="button"
+            onClick={focusName}
+            className="btn-lift bg-ink px-8 py-4 font-mono-x text-[12px] uppercase tracking-[0.16em] text-paper transition-colors hover:bg-accent"
+          >
+            Start a Project&nbsp;&rarr;
+          </button>
+          <a
+            href={site.githubUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="link-draw font-mono-x text-[11px] uppercase tracking-[0.18em] text-ink-soft transition-colors hover:text-accent"
+          >
+            GitHub
+          </a>
+          {site.email ? (
+            <a
+              href={`mailto:${site.email}`}
+              className="link-draw font-mono-x text-[11px] uppercase tracking-[0.18em] text-ink-soft transition-colors hover:text-accent"
+            >
+              Email
+            </a>
+          ) : (
+            <span className="font-mono-x text-[11px] uppercase tracking-[0.18em] text-ink-faint">
+              Email shared after first reply
+            </span>
+          )}
+          {site.linkedinUrl ? (
+            <a
+              href={site.linkedinUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="link-draw font-mono-x text-[11px] uppercase tracking-[0.18em] text-ink-soft transition-colors hover:text-accent"
+            >
+              LinkedIn
+            </a>
+          ) : null}
+        </div>
+
+        <div className="mt-16 grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <p className="font-mono-x text-[11px] uppercase tracking-[0.24em] text-ink-faint">
+              Project notes
+            </p>
+            <p className="mt-4 text-[15px] leading-7 text-ink-soft">
+              Include the kind of site or tool, two or three reference points, and when you need
+              it. Specific notes get specific replies.
+            </p>
           </div>
-          <label className="mt-6 block">
-            <span className="font-mono-x text-[11px] uppercase tracking-[0.18em] text-ink-faint">Project note</span>
-            <textarea name="message" aria-label="Message" value={formData.message} onChange={handleChange} rows={6} placeholder="What it is, pages or screens involved, timeline." className="mt-2 w-full border border-ink bg-white px-4 py-3 text-[15px] leading-7 text-ink placeholder:text-ink-faint" />
-          </label>
-          <div className="mt-6 flex flex-wrap items-center gap-4">
-            <button type="submit" className="border border-ink bg-ink px-6 py-3 font-mono-x text-[12px] uppercase tracking-[0.14em] text-paper transition-colors hover:bg-accent hover:border-accent">Send note</button>
-            {status === 'success' && <p className="text-sm text-moss">Noted. This draft stays in your browser until email is connected.</p>}
-            {status === 'error' && <p className="text-sm text-accent">Add your name, a valid email, and one line about the work.</p>}
-          </div>
-          <p className="mt-5 border-t border-line pt-4 text-[13px] leading-6 text-ink-faint">This form checks fields locally and does not send mail yet.</p>
-        </form>
+          <form onSubmit={handleSubmit} className="border-t border-line pt-8 lg:col-span-7 lg:col-start-6" noValidate>
+            <div className="grid gap-8 sm:grid-cols-2">
+              <label className="block">
+                <span className="font-mono-x text-[11px] uppercase tracking-[0.22em] text-ink-faint">Your name</span>
+                <input id="contact-name" type="text" name="name" aria-label="Name" value={formData.name} onChange={handleChange} placeholder="First and last name" className="mt-2 w-full border-0 border-b border-line-strong bg-transparent px-0 py-3 text-[16px] text-ink placeholder:text-ink-faint transition-colors focus:border-accent" />
+              </label>
+              <label className="block">
+                <span className="font-mono-x text-[11px] uppercase tracking-[0.22em] text-ink-faint">Email</span>
+                <input type="email" name="email" aria-label="Email" value={formData.email} onChange={handleChange} placeholder="you@company.com" className="mt-2 w-full border-0 border-b border-line-strong bg-transparent px-0 py-3 text-[16px] text-ink placeholder:text-ink-faint transition-colors focus:border-accent" />
+              </label>
+            </div>
+            <label className="mt-8 block">
+              <span className="font-mono-x text-[11px] uppercase tracking-[0.22em] text-ink-faint">Project note</span>
+              <textarea name="message" aria-label="Message" value={formData.message} onChange={handleChange} rows={4} placeholder="What it is, pages or screens involved, timeline." className="mt-2 w-full resize-y border-0 border-b border-line-strong bg-transparent px-0 py-3 text-[16px] leading-7 text-ink placeholder:text-ink-faint transition-colors focus:border-accent" />
+            </label>
+            <div className="mt-8 flex flex-wrap items-center gap-5">
+              <button type="submit" className="btn-lift border border-ink px-7 py-3.5 font-mono-x text-[12px] uppercase tracking-[0.16em] text-ink transition-colors hover:border-accent hover:bg-accent hover:text-paper">
+                Send note
+              </button>
+              {status === 'success' && (
+                <p className="text-sm text-moss">Noted. This draft stays in your browser until email is connected.</p>
+              )}
+              {status === 'error' && (
+                <p className="text-sm text-alert">Add your name, a valid email, and one line about the work.</p>
+              )}
+            </div>
+            <p className="mt-6 text-[13px] leading-6 text-ink-faint">
+              This form checks fields locally and does not send mail yet.
+            </p>
+          </form>
+        </div>
       </div>
     </section>
   )

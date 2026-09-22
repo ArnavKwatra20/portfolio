@@ -144,7 +144,15 @@ function RacingFrame() {
   )
 }
 
-export function ProjectPreview({ project, className = '' }: { project: Project; className?: string }) {
+export function ProjectPreview({
+  project,
+  className = '',
+  aspectClass = 'aspect-[16/10]',
+}: {
+  project: Project
+  className?: string
+  aspectClass?: string
+}) {
   const frame =
     project.slug === 'cafe-blues' ? (
       <CafeFrame />
@@ -155,9 +163,13 @@ export function ProjectPreview({ project, className = '' }: { project: Project; 
     )
 
   return (
-    <figure className={className}>
-      <div className="aspect-[16/10] w-full">{frame}</div>
-      <figcaption className="mt-2 font-mono-x text-[11px] uppercase tracking-[0.16em] text-ink-faint">
+    <figure className={`group ${className}`}>
+      <div className={`${aspectClass} w-full overflow-hidden`}>
+        <div className="h-full w-full transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]">
+          {frame}
+        </div>
+      </div>
+      <figcaption className="mt-3 font-mono-x text-[11px] uppercase tracking-[0.16em] text-ink-faint">
         {captions[project.slug] ?? project.imageLabel}
       </figcaption>
     </figure>

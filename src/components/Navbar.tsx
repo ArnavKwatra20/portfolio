@@ -1,46 +1,64 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const links = [
   { label: 'Work', href: '#work' },
-  { label: 'Services', href: '#services' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ]
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [progress, setProgress] = useState(0)
+
+  useEffect(() => {
+    const onScroll = () => {
+      const doc = document.documentElement
+      const max = doc.scrollHeight - window.innerHeight
+      setProgress(max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0)
+      setScrolled(window.scrollY > 12)
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
-    <header className="sticky top-0 z-50 border-b border-ink bg-paper/95">
+    <header
+      className={`sticky top-0 z-50 border-b transition-colors duration-500 ${
+        scrolled ? 'border-line bg-paper/75 backdrop-blur-md' : 'border-transparent'
+      }`}
+    >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8" aria-label="Main navigation">
-        <a href="#top" className="flex items-baseline gap-3">
-          <span className="font-display text-xl font-semibold tracking-tight text-ink">Arnav Kwatra</span>
-          <span className="font-mono-x hidden text-[11px] uppercase tracking-[0.18em] text-ink-faint sm:inline">
-            Folio / 2026
+        <a href="#top" className="group flex items-center gap-3" aria-label="Arnav Kwatra, home">
+          <span className="font-display text-xl font-medium tracking-tight text-ink">AK</span>
+          <span aria-hidden="true" className="h-4 w-px bg-line-strong" />
+          <span className="hidden font-mono-x text-[11px] uppercase tracking-[0.24em] text-ink-faint transition-colors group-hover:text-ink sm:inline">
+            Arnav Kwatra
           </span>
         </a>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-9 md:flex">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="font-mono-x text-[12px] uppercase tracking-[0.16em] text-ink-soft underline-offset-8 transition-colors hover:text-ink hover:underline"
+              className="link-draw font-mono-x text-[11px] uppercase tracking-[0.2em] text-ink-soft transition-colors hover:text-ink"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#contact"
-            className="border border-ink bg-ink px-4 py-2 font-mono-x text-[12px] uppercase tracking-[0.14em] text-paper transition-colors hover:bg-accent hover:border-accent"
+            className="btn-lift bg-ink px-5 py-2.5 font-mono-x text-[11px] uppercase tracking-[0.16em] text-paper transition-colors hover:bg-accent"
           >
-            Start a project
+            Start a Project&nbsp;→
           </a>
         </div>
 
         <button
           type="button"
-          className="border border-ink px-4 py-2 font-mono-x text-[12px] uppercase tracking-[0.14em] text-ink md:hidden"
+          className="border border-line-strong px-4 py-2 font-mono-x text-[11px] uppercase tracking-[0.18em] text-ink transition-colors hover:border-accent hover:text-accent md:hidden"
           aria-expanded={isOpen}
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
           onClick={() => setIsOpen((value) => !value)}
@@ -49,27 +67,36 @@ export function Navbar() {
         </button>
       </nav>
 
+      <div
+        aria-hidden="true"
+        className="absolute bottom-[-1px] left-0 h-px bg-accent transition-[width] duration-150 ease-out"
+        style={{ width: `${progress}%` }}
+      />
+
       {isOpen && (
-        <div className="border-t border-ink bg-paper px-5 py-4 md:hidden">
-          <div className="flex flex-col">
+        <div className="fixed inset-0 z-40 flex flex-col justify-center bg-paper/95 px-6 backdrop-blur-lg md:hidden">
+          <nav className="flex flex-col gap-2" aria-label="Mobile navigation">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="flex items-baseline justify-between border-b border-line py-3 font-mono-x text-[13px] uppercase tracking-[0.14em] text-ink"
+                className="font-display text-4xl font-light tracking-tight text-ink transition-colors hover:text-accent"
               >
-                <span>{link.label}</span>
+                {link.label}
               </a>
             ))}
-            <a
-              href="#contact"
-              onClick={() => setIsOpen(false)}
-              className="mt-4 bg-ink px-4 py-3 text-center font-mono-x text-[12px] uppercase tracking-[0.14em] text-paper"
-            >
-              Start a project
-            </a>
-          </div>
+          </nav>
+          <a
+            href="#contact"
+            onClick={() => setIsOpen(false)}
+            className="mt-10 self-start bg-ink px-6 py-3.5 font-mono-x text-[12px] uppercase tracking-[0.16em] text-paper"
+          >
+            Start a Project&nbsp;→
+          </a>
+          <p className="mt-8 font-mono-x text-[10px] uppercase tracking-[0.24em] text-ink-faint">
+            Full-Stack Developer / 2026
+          </p>
         </div>
       )}
     </header>

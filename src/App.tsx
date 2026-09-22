@@ -1,15 +1,11 @@
 import { useEffect, useState } from 'react'
 import { About } from './components/About'
-import { CTA } from './components/CTA'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
 import { Navbar } from './components/Navbar'
-import { Process } from './components/Process'
 import { Projects } from './components/Projects'
 import { Services } from './components/Services'
-import { Skills } from './components/Skills'
-import { TechStrip } from './components/TechStrip'
 import { getSlugFromHash } from './data/caseStudyRoutes'
 import { getProjectBySlug } from './data/projects'
 import { CaseStudy } from './pages/CaseStudy'
@@ -21,13 +17,9 @@ function HomePage() {
       <Navbar />
       <main>
         <Hero />
-        <TechStrip />
         <Projects />
-        <About />
         <Services />
-        <Skills />
-        <Process />
-        <CTA />
+        <About />
         <Contact />
       </main>
       <Footer />
@@ -58,6 +50,24 @@ function App() {
     window.addEventListener('hashchange', onHashChange)
     return () => window.removeEventListener('hashchange', onHashChange)
   }, [])
+
+  useEffect(() => {
+    const nodes = document.querySelectorAll('[data-reveal]:not(.is-visible)')
+    if (nodes.length === 0) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+            observer.unobserve(entry.target)
+          }
+        }
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -6% 0px' }
+    )
+    nodes.forEach((node) => observer.observe(node))
+    return () => observer.disconnect()
+  }, [route])
 
   const slug = getSlugFromHash()
   const project = slug ? getProjectBySlug(slug) : undefined

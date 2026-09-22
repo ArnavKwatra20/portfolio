@@ -17,8 +17,10 @@ export type Project = {
   isConcept: boolean
   problem: string
   approach: string
+  designDirection: string
   technical: string
   challenges: string
+  decisions: string
   outcome: string
   technologies: string[]
   features: string[]

@@ -1,24 +1,54 @@
+import { site } from '../data/site'
+
+const footerLinks = [
+  { label: 'Work', href: '#work' },
+  { label: 'Services', href: '#services' },
+  { label: 'About', href: '#about' },
+  { label: 'Contact', href: '#contact' },
+  { label: 'Privacy', href: '#/privacy' },
+  { label: 'Terms', href: '#/terms' },
+]
+
 export function Footer() {
   return (
-    <footer className="bg-ink text-paper">
-      <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
-        <div className="flex flex-wrap items-baseline justify-between gap-6">
-          <p className="font-display text-2xl tracking-tight">Arnav Kwatra</p>
-          <p className="font-mono-x text-[11px] uppercase tracking-[0.18em] text-line-mid">
-            Full-Stack Developer / 2026 edition
+    <footer className="bg-paper-deep">
+      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+        <div className="flex flex-wrap items-end justify-between gap-8">
+          <div>
+            <p className="font-display text-3xl font-light tracking-tight text-ink">Arnav Kwatra</p>
+            <p className="mt-2 font-mono-x text-[11px] uppercase tracking-[0.24em] text-accent">
+              Full-Stack Developer
+            </p>
+          </div>
+          <nav className="flex flex-wrap gap-x-8 gap-y-3" aria-label="Footer navigation">
+            {footerLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="link-draw font-mono-x text-[11px] uppercase tracking-[0.18em] text-ink-soft transition-colors hover:text-ink"
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href={site.githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="link-draw font-mono-x text-[11px] uppercase tracking-[0.18em] text-ink-soft transition-colors hover:text-ink"
+            >
+              GitHub
+            </a>
+          </nav>
+        </div>
+
+        <div className="mt-10 flex flex-wrap items-baseline justify-between gap-4 border-t border-line pt-6">
+          <p className="text-[13px] leading-6 text-ink-faint">
+            &copy; 2026 Arnav Kwatra. Set in Fraunces, Public Sans, and IBM Plex Mono.
+          </p>
+          <p className="font-mono-x text-[10px] uppercase tracking-[0.2em] text-ink-faint">
+            No tracking scripts on this page
           </p>
         </div>
-        <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 border-t border-ink-deep pt-6 font-mono-x text-[12px] uppercase tracking-[0.14em]">
-          <a href="#work" className="text-line-soft underline-offset-4 hover:underline">Work</a>
-          <a href="#services" className="text-line-soft underline-offset-4 hover:underline">Services</a>
-          <a href="#about" className="text-line-soft underline-offset-4 hover:underline">About</a>
-          <a href="#contact" className="text-line-soft underline-offset-4 hover:underline">Contact</a>
-          <a href="#/privacy" className="text-line-soft underline-offset-4 hover:underline">Privacy</a>
-          <a href="#/terms" className="text-line-soft underline-offset-4 hover:underline">Terms</a>
-        </div>
-        <p className="mt-8 text-[13px] leading-6 text-line-mid">
-          Set in Fraunces, Public Sans, and IBM Plex Mono. No tracking scripts on this page.
-        </p>
       </div>
     </footer>
   )
