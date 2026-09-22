@@ -23,22 +23,22 @@ const steps = [
 
 export function Process() {
   return (
-    <section aria-label="Working method" className="border-b border-[#1b1814] bg-[#ece7db]">
+    <section aria-label="Working method" className="border-b border-ink bg-paper-deep">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 md:py-20">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <p className="font-mono-x text-[12px] uppercase tracking-[0.2em] text-[#7c7263]">05 / Method</p>
-            <h2 className="font-display mt-4 text-3xl font-medium leading-tight tracking-tight text-[#1b1814] md:text-4xl">
+            <p className="font-mono-x text-[12px] uppercase tracking-[0.2em] text-ink-faint">05 / Method</p>
+            <h2 className="font-display mt-4 text-3xl font-medium leading-tight tracking-tight text-ink md:text-4xl">
               Four steps, no theatre.
             </h2>
           </div>
           <ol className="lg:col-span-8">
             {steps.map((step) => (
-              <li key={step.label} className="grid gap-2 border-t border-[#1b1814] py-6 first:border-t-2 sm:grid-cols-12 sm:gap-6">
-                <span className="font-mono-x text-[13px] tracking-[0.16em] text-[#9a3b26] sm:col-span-2">{step.label}</span>
+              <li key={step.label} className="grid gap-2 border-t border-ink py-6 first:border-t-2 sm:grid-cols-12 sm:gap-6">
+                <span className="font-mono-x text-[13px] tracking-[0.16em] text-accent sm:col-span-2">{step.label}</span>
                 <div className="sm:col-span-10">
-                  <h3 className="font-display text-xl text-[#1b1814]">{step.title}</h3>
-                  <p className="mt-1 max-w-2xl text-[15px] leading-7 text-[#4d463c]">{step.description}</p>
+                  <h3 className="font-display text-xl text-ink">{step.title}</h3>
+                  <p className="mt-1 max-w-2xl text-[15px] leading-7 text-ink-soft">{step.description}</p>
                 </div>
               </li>
             ))}

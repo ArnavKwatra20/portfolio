@@ -38,9 +38,9 @@ function HomePage() {
 function NotFound() {
   return (
     <div className="mx-auto max-w-3xl px-5 py-24 sm:px-8">
-      <p className="font-mono-x text-[12px] uppercase tracking-[0.2em] text-[#7c7263]">Missing page</p>
-      <h1 className="font-display mt-4 text-4xl tracking-tight text-[#1b1814]">That page is not in this edition.</h1>
-      <a href="#/" className="mt-8 inline-block border border-[#1b1814] bg-[#1b1814] px-6 py-3 font-mono-x text-[12px] uppercase tracking-[0.14em] text-[#f4f1ea]">
+      <p className="font-mono-x text-[12px] uppercase tracking-[0.2em] text-ink-faint">Missing page</p>
+      <h1 className="font-display mt-4 text-4xl tracking-tight text-ink">That page is not in this edition.</h1>
+      <a href="#/" className="mt-8 inline-block border border-ink bg-ink px-6 py-3 font-mono-x text-[12px] uppercase tracking-[0.14em] text-paper">
         Back to portfolio
       </a>
     </div>
@@ -64,7 +64,7 @@ function App() {
 
   if (route === '#/privacy' || route === '#/terms') {
     return (
-      <div className="min-h-screen bg-[#f4f1ea] text-[#1b1814]">
+      <div className="min-h-screen bg-paper text-ink">
         <Legal kind={route === '#/privacy' ? 'privacy' : 'terms'} />
         <Footer />
       </div>
@@ -74,14 +74,14 @@ function App() {
   if (route.startsWith('#/projects/')) {
     if (!project) {
       return (
-        <div className="min-h-screen bg-[#f4f1ea] text-[#1b1814]">
+        <div className="min-h-screen bg-paper text-ink">
           <NotFound />
           <Footer />
         </div>
       )
     }
     return (
-      <div className="min-h-screen bg-[#f4f1ea] text-[#1b1814]">
+      <div className="min-h-screen bg-paper text-ink">
         <CaseStudy project={project} />
         <Footer />
       </div>
@@ -89,7 +89,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f4f1ea] text-[#1b1814]">
+    <div className="min-h-screen bg-paper text-ink">
       <HomePage />
     </div>
   )

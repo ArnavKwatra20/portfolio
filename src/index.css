@@ -16,6 +16,10 @@
   --color-accent: #9a3b26;
   --color-accent-deep: #7c2e1d;
   --color-moss: #4d5a43;
+  --color-line-soft: #e8e1d2;
+  --color-line-dot: #c9c0ad;
+  --color-line-mid: #b8ae9c;
+  --color-ink-deep: #3a342b;
 }
 
 :root {

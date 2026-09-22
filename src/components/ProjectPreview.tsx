@@ -52,21 +52,21 @@ const captions: Record<string, string> = {
 
 function CafeFrame() {
   return (
-    <div className="flex h-full flex-col border border-[#1b1814] bg-[#faf8f2] p-5">
+    <div className="flex h-full flex-col border border-ink bg-field p-5">
       <div className="flex items-baseline justify-between">
-        <p className="font-display text-lg tracking-tight text-[#1b1814]">Cafe Blues</p>
-        <p className="font-mono-x text-[10px] uppercase tracking-[0.18em] text-[#7c7263]">Menu / p.02</p>
+        <p className="font-display text-lg tracking-tight text-ink">Cafe Blues</p>
+        <p className="font-mono-x text-[10px] uppercase tracking-[0.18em] text-ink-faint">Menu / p.02</p>
       </div>
       <ul className="my-4 space-y-3">
         {cafeMenuSample.map((item) => (
           <li key={item.name} className="flex items-baseline gap-3">
-            <span className="font-display text-[15px] leading-none text-[#1b1814]">{item.name}</span>
-            <span className="mb-1 flex-1 self-end border-b border-dotted border-[#c9c0ad]" aria-hidden="true" />
-            <span className="font-mono-x text-[13px] leading-none text-[#4d463c]">{item.price}</span>
+            <span className="font-display text-[15px] leading-none text-ink">{item.name}</span>
+            <span className="mb-1 flex-1 self-end border-b border-dotted border-line-dot" aria-hidden="true" />
+            <span className="font-mono-x text-[13px] leading-none text-ink-soft">{item.price}</span>
           </li>
         ))}
       </ul>
-      <p className="mt-auto font-mono-x text-[10px] uppercase tracking-[0.16em] text-[#7c7263]">
+      <p className="mt-auto font-mono-x text-[10px] uppercase tracking-[0.16em] text-ink-faint">
         Coffee / Breakfast / Mains / Desserts
       </p>
     </div>
@@ -75,32 +75,32 @@ function CafeFrame() {
 
 function PsaFrame() {
   return (
-    <div className="flex h-full flex-col border border-[#1b1814] bg-[#faf8f2] p-5">
+    <div className="flex h-full flex-col border border-ink bg-field p-5">
       <div className="flex items-baseline justify-between">
-        <p className="font-display text-lg tracking-tight text-[#1b1814]">Process explorer</p>
-        <p className="font-mono-x text-[10px] uppercase tracking-[0.18em] text-[#7c7263]">Read-only</p>
+        <p className="font-display text-lg tracking-tight text-ink">Process explorer</p>
+        <p className="font-mono-x text-[10px] uppercase tracking-[0.18em] text-ink-faint">Read-only</p>
       </div>
       <table className="mt-3 w-full border-collapse text-left">
         <thead>
-          <tr className="border-b border-[#1b1814]">
-            <th className="pb-1.5 font-mono-x text-[10px] font-medium uppercase tracking-[0.14em] text-[#7c7263]">PID</th>
-            <th className="pb-1.5 font-mono-x text-[10px] font-medium uppercase tracking-[0.14em] text-[#7c7263]">Name</th>
-            <th className="pb-1.5 text-right font-mono-x text-[10px] font-medium uppercase tracking-[0.14em] text-[#7c7263]">CPU %</th>
-            <th className="pb-1.5 text-right font-mono-x text-[10px] font-medium uppercase tracking-[0.14em] text-[#7c7263]">Mem MB</th>
+          <tr className="border-b border-ink">
+            <th className="pb-1.5 font-mono-x text-[10px] font-medium uppercase tracking-[0.14em] text-ink-faint">PID</th>
+            <th className="pb-1.5 font-mono-x text-[10px] font-medium uppercase tracking-[0.14em] text-ink-faint">Name</th>
+            <th className="pb-1.5 text-right font-mono-x text-[10px] font-medium uppercase tracking-[0.14em] text-ink-faint">CPU %</th>
+            <th className="pb-1.5 text-right font-mono-x text-[10px] font-medium uppercase tracking-[0.14em] text-ink-faint">Mem MB</th>
           </tr>
         </thead>
         <tbody>
           {processSample.map(([pid, name, cpu, mem]) => (
-            <tr key={pid} className="border-b border-dotted border-[#d8d0bf]">
-              <td className="py-1.5 font-mono-x text-[12px] text-[#4d463c]">{pid}</td>
-              <td className="py-1.5 font-mono-x text-[12px] text-[#1b1814]">{name}</td>
-              <td className="py-1.5 text-right font-mono-x text-[12px] text-[#4d463c]">{cpu}</td>
-              <td className="py-1.5 text-right font-mono-x text-[12px] text-[#4d463c]">{mem}</td>
+            <tr key={pid} className="border-b border-dotted border-line">
+              <td className="py-1.5 font-mono-x text-[12px] text-ink-soft">{pid}</td>
+              <td className="py-1.5 font-mono-x text-[12px] text-ink">{name}</td>
+              <td className="py-1.5 text-right font-mono-x text-[12px] text-ink-soft">{cpu}</td>
+              <td className="py-1.5 text-right font-mono-x text-[12px] text-ink-soft">{mem}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      <p className="mt-auto pt-3 font-mono-x text-[10px] uppercase tracking-[0.14em] text-[#7c7263]">
+      <p className="mt-auto pt-3 font-mono-x text-[10px] uppercase tracking-[0.14em] text-ink-faint">
         Sample rows / interface preview
       </p>
     </div>
@@ -109,10 +109,10 @@ function PsaFrame() {
 
 function RacingFrame() {
   return (
-    <div className="flex h-full flex-col border border-[#1b1814] bg-[#faf8f2] p-5">
+    <div className="flex h-full flex-col border border-ink bg-field p-5">
       <div className="flex items-baseline justify-between">
-        <p className="font-display text-lg tracking-tight text-[#1b1814]">Speed trace</p>
-        <p className="font-mono-x text-[10px] uppercase tracking-[0.18em] text-[#7c7263]">Lap 16 / RB-07</p>
+        <p className="font-display text-lg tracking-tight text-ink">Speed trace</p>
+        <p className="font-mono-x text-[10px] uppercase tracking-[0.18em] text-ink-faint">Lap 16 / RB-07</p>
       </div>
       <div className="my-3 flex-1">
         <svg
@@ -122,20 +122,20 @@ function RacingFrame() {
           role="img"
           aria-label="Speed trace across three sectors"
         >
-          <line x1="0" y1={SPEED_H - 0.5} x2={SPEED_W} y2={SPEED_H - 0.5} stroke="#1b1814" strokeWidth="1" />
+          <line x1="0" y1={SPEED_H - 0.5} x2={SPEED_W} y2={SPEED_H - 0.5} stroke="var(--color-ink)" strokeWidth="1" />
           {sectorTicks.map((x) => (
-            <line key={x} x1={x} y1="0" x2={x} y2={SPEED_H} stroke="#c9c0ad" strokeWidth="1" strokeDasharray="2 3" />
+            <line key={x} x1={x} y1="0" x2={x} y2={SPEED_H} stroke="var(--color-line-dot)" strokeWidth="1" strokeDasharray="2 3" />
           ))}
           <polyline
             points={speedPoints}
             fill="none"
-            stroke="#9a3b26"
+            stroke="var(--color-accent)"
             strokeWidth="2"
             vectorEffect="non-scaling-stroke"
           />
         </svg>
       </div>
-      <div className="flex justify-between font-mono-x text-[10px] uppercase tracking-[0.14em] text-[#7c7263]">
+      <div className="flex justify-between font-mono-x text-[10px] uppercase tracking-[0.14em] text-ink-faint">
         <span>S1</span>
         <span>S2</span>
         <span>S3</span>
@@ -157,7 +157,7 @@ export function ProjectPreview({ project, className = '' }: { project: Project; 
   return (
     <figure className={className}>
       <div className="aspect-[16/10] w-full">{frame}</div>
-      <figcaption className="mt-2 font-mono-x text-[11px] uppercase tracking-[0.16em] text-[#7c7263]">
+      <figcaption className="mt-2 font-mono-x text-[11px] uppercase tracking-[0.16em] text-ink-faint">
         {captions[project.slug] ?? project.imageLabel}
       </figcaption>
     </figure>
