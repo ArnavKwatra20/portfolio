@@ -15,7 +15,7 @@ export const processAnalyzer: Project = {
   sourceUrl: '',
   status: 'Working prototype',
   isConcept: false,
-  problem: 'Understand what a Windows machine is observably doing — processes, parent/child links, resources, and local network connections — in one transparent read-only workstation.',
+  problem: 'Understand what a Windows machine is observably doing (processes, parent/child links, resources, and local network connections) in one transparent read-only workstation.',
   approach: 'Built an Express read-only API over PowerShell/CIM and netstat collection, paired with a React UI with overview, explorer, tree, network, analysis, events, and settings views. No arbitrary shell execution or process termination.',
   technical: 'Client: React 19, TypeScript, Vite 6, Recharts, Lucide. Server: Express 5, TypeScript, CORS allowlist, rate limiting, bearer auth, zod validation. Deployment uses a Vercel UI with a serverless relay through Cloudflare Tunnel to the local Windows API.',
   challenges: 'Keeping collection fast and safe with caching, selective owner lookup, permission-aware Unavailable fields, and resilient tunnel-backed remote data.',

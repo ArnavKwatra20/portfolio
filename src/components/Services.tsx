@@ -2,35 +2,42 @@ import { services } from '../data/services'
 
 export function Services() {
   return (
-    <section id="services" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-      <div className="mb-12 max-w-2xl">
-        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Services</p>
-        <h2 className="mt-4 text-3xl font-bold text-white md:text-4xl">A focused service mix for modern web work.</h2>
-      </div>
-
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        {services.map((service) => (
-          <article
-            key={service.title}
-            className="group rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(15,23,42,0.82),rgba(15,23,42,0.96))] p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:shadow-[0_18px_50px_rgba(8,145,178,0.12)]"
-          >
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/10 text-lg text-cyan-200 ring-1 ring-cyan-400/20">
-              ✦
-            </div>
-
-            <h3 className="text-xl font-semibold text-white">{service.title}</h3>
-            <p className="mt-4 text-sm leading-7 text-slate-300">{service.summary}</p>
-
-            <ul className="mt-5 space-y-3 text-sm text-slate-300">
-              {service.points.map((point) => (
-                <li key={point} className="flex items-center gap-3">
-                  <span className="h-2 w-2 rounded-full bg-cyan-400" />
-                  {point}
-                </li>
+    <section id="services" className="border-b border-[#d8d0bf]">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 md:py-20">
+        <div className="grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <p className="font-mono-x text-[12px] uppercase tracking-[0.2em] text-[#7c7263]">03 / Services</p>
+            <h2 className="font-display mt-4 text-3xl font-medium leading-tight tracking-tight text-[#1b1814] md:text-4xl">
+              What I will take on.
+            </h2>
+            <p className="mt-4 text-[15px] leading-7 text-[#4d463c]">
+              Four kinds of work, each tied to something in the portfolio. If a request does not fit
+              these, I will say so.
+            </p>
+          </div>
+          <div className="lg:col-span-8">
+            <div className="border-t border-[#1b1814]">
+              {services.map((service, index) => (
+                <div key={service.title} className="grid gap-3 border-b border-[#d8d0bf] py-6 md:grid-cols-12 md:gap-6">
+                  <p className="font-mono-x text-[12px] uppercase tracking-[0.18em] text-[#7c7263] md:col-span-2">
+                    S.0{index + 1}
+                  </p>
+                  <div className="md:col-span-5">
+                    <h3 className="font-display text-2xl tracking-tight text-[#1b1814]">{service.title}</h3>
+                    <p className="mt-2 text-[15px] leading-7 text-[#4d463c]">{service.summary}</p>
+                  </div>
+                  <ul className="space-y-2 md:col-span-5">
+                    {service.points.map((point) => (
+                      <li key={point} className="border-b border-dotted border-[#d8d0bf] pb-2 text-sm leading-6 text-[#4d463c] last:border-b-0 last:pb-0">
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
-          </article>
-        ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

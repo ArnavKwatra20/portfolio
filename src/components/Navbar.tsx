@@ -1,11 +1,9 @@
-import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 
 const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
   { label: 'Work', href: '#work' },
-  { label: 'Skills', href: '#skills' },
+  { label: 'Services', href: '#services' },
+  { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -13,83 +11,67 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <motion.header
-      initial={{ y: -18, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.45, ease: 'easeOut' }}
-      className="sticky top-0 z-50 border-b border-white/10 bg-[#020817]/80 backdrop-blur-xl"
-    >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Main navigation">
-        <a href="#top" className="flex items-center gap-3 text-sm font-semibold tracking-[0.16em] text-white uppercase">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-500/10 text-base text-cyan-200">
-            A
+    <header className="sticky top-0 z-50 border-b border-[#1b1814] bg-[#f4f1ea]/95">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8" aria-label="Main navigation">
+        <a href="#top" className="flex items-baseline gap-3">
+          <span className="font-display text-xl font-semibold tracking-tight text-[#1b1814]">Arnav Kwatra</span>
+          <span className="font-mono-x hidden text-[11px] uppercase tracking-[0.18em] text-[#7c7263] sm:inline">
+            Folio / 2026
           </span>
-          Arnav Kwatra
         </a>
 
-        <div className="hidden items-center gap-7 text-sm text-slate-300 md:flex">
+        <div className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
-            <a key={link.href} href={link.href} className="transition hover:text-white">
+            <a
+              key={link.href}
+              href={link.href}
+              className="font-mono-x text-[12px] uppercase tracking-[0.16em] text-[#4d463c] underline-offset-8 transition-colors hover:text-[#1b1814] hover:underline"
+            >
               {link.label}
             </a>
           ))}
-        </div>
-
-        <div className="hidden md:block">
           <a
             href="#contact"
-            className="rounded-full border border-cyan-400/40 bg-cyan-500/10 px-4 py-2.5 text-sm font-medium text-cyan-200 transition hover:border-cyan-300 hover:bg-cyan-500/20"
+            className="border border-[#1b1814] bg-[#1b1814] px-4 py-2 font-mono-x text-[12px] uppercase tracking-[0.14em] text-[#f4f1ea] transition-colors hover:bg-[#9a3b26] hover:border-[#9a3b26]"
           >
-            Let’s Work Together
+            Start a project
           </a>
         </div>
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white md:hidden"
+          className="border border-[#1b1814] px-4 py-2 font-mono-x text-[12px] uppercase tracking-[0.14em] text-[#1b1814] md:hidden"
           aria-expanded={isOpen}
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
           onClick={() => setIsOpen((value) => !value)}
         >
-          <span className="flex flex-col gap-1.5">
-            <span className="block h-0.5 w-5 rounded-full bg-white" />
-            <span className="block h-0.5 w-5 rounded-full bg-white" />
-            <span className="block h-0.5 w-5 rounded-full bg-white" />
-          </span>
+          {isOpen ? 'Close' : 'Menu'}
         </button>
       </nav>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="overflow-hidden border-t border-white/10 bg-[#020817]/95 px-4 py-4 md:hidden"
-          >
-            <div className="flex flex-col gap-3 text-sm text-slate-200">
-              {links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="rounded-xl border border-white/5 bg-white/5 px-3 py-2.5 transition hover:border-cyan-400/30 hover:bg-cyan-500/10"
-                >
-                  {link.label}
-                </a>
-              ))}
+      {isOpen && (
+        <div className="border-t border-[#1b1814] bg-[#f4f1ea] px-5 py-4 md:hidden">
+          <div className="flex flex-col">
+            {links.map((link) => (
               <a
-                href="#contact"
-                className="mt-2 rounded-full bg-cyan-400 px-4 py-2.5 text-center font-semibold text-slate-950"
+                key={link.href}
+                href={link.href}
                 onClick={() => setIsOpen(false)}
+                className="flex items-baseline justify-between border-b border-[#d8d0bf] py-3 font-mono-x text-[13px] uppercase tracking-[0.14em] text-[#1b1814]"
               >
-                Let’s Work Together
+                <span>{link.label}</span>
               </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+            ))}
+            <a
+              href="#contact"
+              onClick={() => setIsOpen(false)}
+              className="mt-4 bg-[#1b1814] px-4 py-3 text-center font-mono-x text-[12px] uppercase tracking-[0.14em] text-[#f4f1ea]"
+            >
+              Start a project
+            </a>
+          </div>
+        </div>
+      )}
+    </header>
   )
 }

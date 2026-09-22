@@ -1,0 +1,165 @@
+import type { Project } from '../data/projects'
+
+const cafeMenuSample = [
+  { name: 'Velvet Flat White', price: '280' },
+  { name: 'The Blue Plate', price: '540' },
+  { name: 'Truffle Mafaldine', price: '690' },
+  { name: 'Burnt Basque Cheesecake', price: '380' },
+]
+
+const processSample: Array<[string, string, string, string]> = [
+  ['0784', 'node.exe', '4.2', '212'],
+  ['1240', 'chrome.exe', '7.9', '640'],
+  ['0412', 'explorer.exe', '1.6', '154'],
+  ['0908', 'powershell.exe', '0.7', '58'],
+  ['0160', 'svchost.exe', '1.1', '92'],
+]
+
+const SPEED_W = 320
+const SPEED_H = 120
+const SPEED_N = 96
+const CIRCUIT_LEN = 5.842
+
+function buildSpeedPoints(): string {
+  const pace = 0.99
+  const lap = 16
+  const pts: string[] = []
+  for (let i = 0; i < SPEED_N; i += 1) {
+    const progress = i / (SPEED_N - 1)
+    const corner = Math.max(0, Math.sin(progress * Math.PI * 6 - 0.8))
+    let speed =
+      236 +
+      48 * Math.sin(progress * Math.PI * 2 - 0.4) -
+      corner * (75 - pace * 8) +
+      pace * 5 -
+      (lap - 16) * 0.8
+    speed = Math.min(318, Math.max(108, speed))
+    const x = progress * SPEED_W
+    const y = SPEED_H - ((speed - 100) / 220) * SPEED_H
+    pts.push(`${x.toFixed(1)},${y.toFixed(1)}`)
+  }
+  return pts.join(' ')
+}
+
+const speedPoints = buildSpeedPoints()
+const sectorTicks = [1.94 / CIRCUIT_LEN, 3.88 / CIRCUIT_LEN].map((f) => f * SPEED_W)
+
+const captions: Record<string, string> = {
+  'cafe-blues': 'Menu view, data-driven categories',
+  'process-strength-analyzer': 'Process explorer, read-only table',
+  'car-racing-lap': 'Speed trace across three sectors',
+}
+
+function CafeFrame() {
+  return (
+    <div className="flex h-full flex-col border border-[#1b1814] bg-[#faf8f2] p-5">
+      <div className="flex items-baseline justify-between">
+        <p className="font-display text-lg tracking-tight text-[#1b1814]">Cafe Blues</p>
+        <p className="font-mono-x text-[10px] uppercase tracking-[0.18em] text-[#7c7263]">Menu / p.02</p>
+      </div>
+      <ul className="my-4 space-y-3">
+        {cafeMenuSample.map((item) => (
+          <li key={item.name} className="flex items-baseline gap-3">
+            <span className="font-display text-[15px] leading-none text-[#1b1814]">{item.name}</span>
+            <span className="mb-1 flex-1 self-end border-b border-dotted border-[#c9c0ad]" aria-hidden="true" />
+            <span className="font-mono-x text-[13px] leading-none text-[#4d463c]">{item.price}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-auto font-mono-x text-[10px] uppercase tracking-[0.16em] text-[#7c7263]">
+        Coffee / Breakfast / Mains / Desserts
+      </p>
+    </div>
+  )
+}
+
+function PsaFrame() {
+  return (
+    <div className="flex h-full flex-col border border-[#1b1814] bg-[#faf8f2] p-5">
+      <div className="flex items-baseline justify-between">
+        <p className="font-display text-lg tracking-tight text-[#1b1814]">Process explorer</p>
+        <p className="font-mono-x text-[10px] uppercase tracking-[0.18em] text-[#7c7263]">Read-only</p>
+      </div>
+      <table className="mt-3 w-full border-collapse text-left">
+        <thead>
+          <tr className="border-b border-[#1b1814]">
+            <th className="pb-1.5 font-mono-x text-[10px] font-medium uppercase tracking-[0.14em] text-[#7c7263]">PID</th>
+            <th className="pb-1.5 font-mono-x text-[10px] font-medium uppercase tracking-[0.14em] text-[#7c7263]">Name</th>
+            <th className="pb-1.5 text-right font-mono-x text-[10px] font-medium uppercase tracking-[0.14em] text-[#7c7263]">CPU %</th>
+            <th className="pb-1.5 text-right font-mono-x text-[10px] font-medium uppercase tracking-[0.14em] text-[#7c7263]">Mem MB</th>
+          </tr>
+        </thead>
+        <tbody>
+          {processSample.map(([pid, name, cpu, mem]) => (
+            <tr key={pid} className="border-b border-dotted border-[#d8d0bf]">
+              <td className="py-1.5 font-mono-x text-[12px] text-[#4d463c]">{pid}</td>
+              <td className="py-1.5 font-mono-x text-[12px] text-[#1b1814]">{name}</td>
+              <td className="py-1.5 text-right font-mono-x text-[12px] text-[#4d463c]">{cpu}</td>
+              <td className="py-1.5 text-right font-mono-x text-[12px] text-[#4d463c]">{mem}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="mt-auto pt-3 font-mono-x text-[10px] uppercase tracking-[0.14em] text-[#7c7263]">
+        Sample rows / interface preview
+      </p>
+    </div>
+  )
+}
+
+function RacingFrame() {
+  return (
+    <div className="flex h-full flex-col border border-[#1b1814] bg-[#faf8f2] p-5">
+      <div className="flex items-baseline justify-between">
+        <p className="font-display text-lg tracking-tight text-[#1b1814]">Speed trace</p>
+        <p className="font-mono-x text-[10px] uppercase tracking-[0.18em] text-[#7c7263]">Lap 16 / RB-07</p>
+      </div>
+      <div className="my-3 flex-1">
+        <svg
+          viewBox={`0 0 ${SPEED_W} ${SPEED_H}`}
+          className="h-full w-full"
+          preserveAspectRatio="none"
+          role="img"
+          aria-label="Speed trace across three sectors"
+        >
+          <line x1="0" y1={SPEED_H - 0.5} x2={SPEED_W} y2={SPEED_H - 0.5} stroke="#1b1814" strokeWidth="1" />
+          {sectorTicks.map((x) => (
+            <line key={x} x1={x} y1="0" x2={x} y2={SPEED_H} stroke="#c9c0ad" strokeWidth="1" strokeDasharray="2 3" />
+          ))}
+          <polyline
+            points={speedPoints}
+            fill="none"
+            stroke="#9a3b26"
+            strokeWidth="2"
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+      </div>
+      <div className="flex justify-between font-mono-x text-[10px] uppercase tracking-[0.14em] text-[#7c7263]">
+        <span>S1</span>
+        <span>S2</span>
+        <span>S3</span>
+      </div>
+    </div>
+  )
+}
+
+export function ProjectPreview({ project, className = '' }: { project: Project; className?: string }) {
+  const frame =
+    project.slug === 'cafe-blues' ? (
+      <CafeFrame />
+    ) : project.slug === 'process-strength-analyzer' ? (
+      <PsaFrame />
+    ) : (
+      <RacingFrame />
+    )
+
+  return (
+    <figure className={className}>
+      <div className="aspect-[16/10] w-full">{frame}</div>
+      <figcaption className="mt-2 font-mono-x text-[11px] uppercase tracking-[0.16em] text-[#7c7263]">
+        {captions[project.slug] ?? project.imageLabel}
+      </figcaption>
+    </figure>
+  )
+}

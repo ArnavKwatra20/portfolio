@@ -22,5 +22,5 @@ export const cafeBlues: Project = {
   outcome: 'A complete fictional business website with responsive routes, filterable menu presentation, reservation and contact flows, and accessibility details.',
   technologies: ['React', 'TypeScript', 'Vite', 'React Router', 'Custom CSS', 'lucide-react', 'Framer Motion'],
   features: ['Responsive Home, Menu, About, Contact routes', 'Data-driven menu with filters and vegetarian badges', 'Reservation modal and contact form validation', 'Reveal motion with reduced-motion support', 'Semantic headings, labeled fields, focus states'],
-  result: 'Portfolio concept — fictional business project, not a real client engagement.',
+  result: 'Portfolio concept: a fictional business project, not a real client engagement.',
 }

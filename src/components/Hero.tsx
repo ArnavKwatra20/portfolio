@@ -1,49 +1,55 @@
-import { motion } from 'framer-motion'
-
 export function Hero() {
   return (
-    <motion.section id="top" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }} className="relative isolate overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.16),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.22),_transparent_25%)]" />
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:px-8 lg:py-24">
-        <div>
-          <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 1, 0.36, 1] }} className="inline-flex rounded-full border border-cyan-400/30 bg-cyan-500/10 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.24em] text-cyan-200">
-            Arnav Kwatra • Full-Stack Developer
-          </motion.p>
-          <motion.h1 initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.14, ease: [0.22, 1, 0.36, 1] }} className="mt-6 max-w-xl text-4xl font-black tracking-[-0.06em] text-white sm:text-5xl lg:text-7xl">
-            Arnav Kwatra
-          </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }} className="mt-5 max-w-xl text-lg leading-8 text-slate-300">
-            Full-Stack Developer building polished websites, dashboards, and interactive digital experiences.
-          </motion.p>
-          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.26, ease: [0.22, 1, 0.36, 1] }} className="mt-8 flex flex-wrap gap-4">
-            <a href="#work" className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200">View selected work</a>
-            <a href="#contact" className="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan-400/40 hover:bg-cyan-500/10">Start a project</a>
-          </motion.div>
-          <p className="mt-6 max-w-xl text-sm leading-6 text-slate-400">Business websites → Cafe Blues. Systems dashboards → Process Strength Analyzer. Interactive frontend → Car Racing Lap.</p>
+    <section id="top" className="border-b border-[#1b1814]">
+      <div className="mx-auto max-w-6xl px-5 pb-14 pt-12 sm:px-8 md:pb-20 md:pt-16">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono-x text-[12px] uppercase tracking-[0.18em] text-[#7c7263]">
+          <span>Portfolio No. 01</span>
+          <span aria-hidden="true">/</span>
+          <span>Full-Stack Developer</span>
+          <span aria-hidden="true">/</span>
+          <span>Available for selected work</span>
         </div>
-        <motion.div initial={{ opacity: 0, x: 20, y: 16 }} animate={{ opacity: 1, x: 0, y: 0 }} transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }} className="relative">
-          <div className="absolute inset-6 rounded-[32px] bg-gradient-to-br from-cyan-500/20 via-blue-500/15 to-indigo-500/20 blur-3xl" />
-          <motion.div initial={{ opacity: 0, y: 20, scale: 0.98 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] }} className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[linear-gradient(135deg,rgba(15,23,42,0.9),rgba(15,23,42,0.72))] p-5 shadow-[0_28px_70px_rgba(2,6,23,0.64)] backdrop-blur-md">
-            <div className="rounded-[22px] border border-white/10 bg-slate-900/80 p-5">
-              <div className="mb-6 flex items-center justify-between">
-                <div>
-                  <p className="text-[10px] uppercase tracking-[0.24em] text-slate-400">Selected work</p>
-                  <h2 className="mt-2 text-xl font-semibold text-white">Three focused builds</h2>
-                </div>
-                <span className="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.2em] text-emerald-300">Available</span>
-              </div>
-              <div className="space-y-3">
-                {[['Cafe Blues', 'Business website'], ['Process Strength Analyzer', 'Systems dashboard'], ['Car Racing Lap', 'Interactive experience']].map(([title, kind]) => (
-                  <div key={title} className="rounded-2xl border border-white/10 bg-slate-800/80 p-4">
-                    <p className="text-sm font-semibold text-white">{title}</p>
-                    <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate-400">{kind}</p>
-                  </div>
-                ))}
-              </div>
+
+        <h1 className="font-display mt-8 max-w-5xl text-[clamp(2.75rem,7vw,5.5rem)] font-medium leading-[1.02] tracking-[-0.02em] text-[#1b1814]">
+          Arnav Kwatra builds websites, dashboards, and interactive software people can actually use.
+        </h1>
+
+        <div className="mt-10 grid gap-10 md:grid-cols-12 md:items-end">
+          <p className="max-w-xl text-[17px] leading-8 text-[#4d463c] md:col-span-7">
+            I design and build practical web work: a business site that explains itself, a systems
+            dashboard that stays readable under real data, and an interactive experience with honest
+            engineering underneath. Three projects below, each with notes on how it was made.
+          </p>
+          <div className="flex flex-wrap items-center gap-3 md:col-span-5 md:justify-end">
+            <a
+              href="#work"
+              className="border border-[#1b1814] bg-[#1b1814] px-6 py-3 font-mono-x text-[12px] uppercase tracking-[0.14em] text-[#f4f1ea] transition-colors hover:bg-[#9a3b26] hover:border-[#9a3b26]"
+            >
+              Read the work
+            </a>
+            <a
+              href="#contact"
+              className="border border-[#1b1814] px-6 py-3 font-mono-x text-[12px] uppercase tracking-[0.14em] text-[#1b1814] transition-colors hover:bg-[#1b1814] hover:text-[#f4f1ea]"
+            >
+              Start a project
+            </a>
+          </div>
+        </div>
+
+        <dl className="mt-12 grid grid-cols-2 border-t border-[#1b1814] md:grid-cols-4">
+          {[
+            ['03', 'Documented projects'],
+            ['03', 'Case studies'],
+            ['01', 'Live deployment'],
+            ['2026', 'Current edition'],
+          ].map(([value, label]) => (
+            <div key={label} className="border-b border-r border-[#d8d0bf] px-4 py-4 first:border-l md:border-b-0 md:first:border-l-0 md:[&:nth-child(2)]:border-l-0">
+              <dt className="font-mono-x text-[11px] uppercase tracking-[0.18em] text-[#7c7263]">{label}</dt>
+              <dd className="font-display mt-1 text-2xl text-[#1b1814]">{value}</dd>
             </div>
-          </motion.div>
-        </motion.div>
+          ))}
+        </dl>
       </div>
-    </motion.section>
+    </section>
   )
 }

@@ -18,11 +18,17 @@ Positioning: Full-Stack Developer building polished websites, dashboards, and in
 
 Project links live in `src/data/projectCafe.ts`, `src/data/projectPsa.ts`, and `src/data/projectRacing.ts`.
 
-## Case-study routes (hash routes, no router dependency)
+## Routes (hash routes, no router dependency)
 
 - `#/projects/cafe-blues`
 - `#/projects/process-strength-analyzer`
 - `#/projects/car-racing-lap`
+- `#/privacy` (Privacy Policy)
+- `#/terms` (Terms of Service)
+
+## Project previews
+
+The homepage and each case study render generated preview panels (menu excerpt, read-only process table, telemetry speed trace) built from each project's real data model. No stock screenshots are used.
 
 ## Local development
 

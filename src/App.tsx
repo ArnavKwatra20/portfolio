@@ -13,6 +13,7 @@ import { TechStrip } from './components/TechStrip'
 import { getSlugFromHash } from './data/caseStudyRoutes'
 import { getProjectBySlug } from './data/projects'
 import { CaseStudy } from './pages/CaseStudy'
+import { Legal } from './pages/Legal'
 
 function HomePage() {
   return (
@@ -21,8 +22,8 @@ function HomePage() {
       <main>
         <Hero />
         <TechStrip />
-        <About />
         <Projects />
+        <About />
         <Services />
         <Skills />
         <Process />
@@ -31,6 +32,18 @@ function HomePage() {
       </main>
       <Footer />
     </>
+  )
+}
+
+function NotFound() {
+  return (
+    <div className="mx-auto max-w-3xl px-5 py-24 sm:px-8">
+      <p className="font-mono-x text-[12px] uppercase tracking-[0.2em] text-[#7c7263]">Missing page</p>
+      <h1 className="font-display mt-4 text-4xl tracking-tight text-[#1b1814]">That page is not in this edition.</h1>
+      <a href="#/" className="mt-8 inline-block border border-[#1b1814] bg-[#1b1814] px-6 py-3 font-mono-x text-[12px] uppercase tracking-[0.14em] text-[#f4f1ea]">
+        Back to portfolio
+      </a>
+    </div>
   )
 }
 
@@ -49,20 +62,26 @@ function App() {
   const slug = getSlugFromHash()
   const project = slug ? getProjectBySlug(slug) : undefined
 
+  if (route === '#/privacy' || route === '#/terms') {
+    return (
+      <div className="min-h-screen bg-[#f4f1ea] text-[#1b1814]">
+        <Legal kind={route === '#/privacy' ? 'privacy' : 'terms'} />
+        <Footer />
+      </div>
+    )
+  }
+
   if (route.startsWith('#/projects/')) {
     if (!project) {
       return (
-        <div className="min-h-screen bg-[#020817] text-slate-100">
-          <div className="mx-auto max-w-3xl px-6 py-24 text-center">
-            <h1 className="text-3xl font-bold text-white">Case study not found</h1>
-            <p className="mt-4 text-slate-300">That project route does not exist.</p>
-            <a href="#/" className="mt-8 inline-block rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950">Back to portfolio</a>
-          </div>
+        <div className="min-h-screen bg-[#f4f1ea] text-[#1b1814]">
+          <NotFound />
+          <Footer />
         </div>
       )
     }
     return (
-      <div className="min-h-screen bg-[#020817] text-slate-100 selection:bg-cyan-500/30">
+      <div className="min-h-screen bg-[#f4f1ea] text-[#1b1814]">
         <CaseStudy project={project} />
         <Footer />
       </div>
@@ -70,7 +89,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#020817] text-slate-100 selection:bg-cyan-500/30">
+    <div className="min-h-screen bg-[#f4f1ea] text-[#1b1814]">
       <HomePage />
     </div>
   )
