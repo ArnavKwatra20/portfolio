@@ -33,7 +33,7 @@ export function Contact() {
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-28">
         <div data-reveal>
           <p className="font-mono-x text-[11px] uppercase tracking-[0.3em] text-accent">Contact</p>
-          <h2 className="font-display mt-6 text-[clamp(2.6rem,8.5vw,7rem)] font-light uppercase leading-[0.96] tracking-tight text-ink">
+          <h2 className="font-display mt-6 text-[clamp(2rem,5.5vw,4.5rem)] font-light uppercase leading-[0.96] tracking-tight text-ink">
             Have something
             <br />
             worth building<span className="text-accent">?</span>

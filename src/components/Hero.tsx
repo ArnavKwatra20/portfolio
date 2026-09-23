@@ -25,10 +25,10 @@ export function Hero() {
           style={{ lineHeight: 0.88, letterSpacing: '-0.015em' }}
         >
           <span className="block overflow-hidden">
-            <span className="rise d-2 block text-[clamp(3.25rem,13vw,10.5rem)]">Arnav</span>
+            <span className="rise d-2 block text-[clamp(2.75rem,9vw,7.5rem)]">Arnav</span>
           </span>
           <span className="block overflow-hidden md:pl-[6%]">
-            <span className="rise d-3 block font-normal italic text-[clamp(3.25rem,13vw,10.5rem)]">
+            <span className="rise d-3 block font-normal italic text-[clamp(2.75rem,9vw,7.5rem)]">
               Kwatra
             </span>
           </span>
