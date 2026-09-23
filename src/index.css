@@ -247,13 +247,6 @@ img {
   color: var(--color-accent);
 }
 
-/* Nav menu toggle only: same secondary treatment at compact size. */
-.btn-compact {
-  padding: 0.5rem 1rem;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-}
-
 .btn-lift {
   transition:
     transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),

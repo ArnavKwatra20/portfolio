@@ -7,7 +7,6 @@ const links = [
 ]
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [progress, setProgress] = useState(0)
 
@@ -55,16 +54,6 @@ export function Navbar() {
             Start a Project&nbsp;→
           </a>
         </div>
-
-        <button
-          type="button"
-          className="btn-secondary btn-compact md:hidden"
-          aria-expanded={isOpen}
-          aria-label={isOpen ? 'Close menu' : 'Open menu'}
-          onClick={() => setIsOpen((value) => !value)}
-        >
-          {isOpen ? 'Close' : 'Menu'}
-        </button>
       </nav>
 
       <div
@@ -72,33 +61,6 @@ export function Navbar() {
         className="absolute bottom-[-1px] left-0 h-px bg-accent transition-[width] duration-150 ease-out"
         style={{ width: `${progress}%` }}
       />
-
-      {isOpen && (
-        <div className="fixed inset-0 z-40 flex flex-col justify-center bg-paper/95 px-6 backdrop-blur-lg md:hidden">
-          <nav className="flex flex-col gap-2" aria-label="Mobile navigation">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="font-display text-4xl font-light tracking-tight text-ink transition-colors hover:text-accent"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-          <a
-            href="#contact"
-            onClick={() => setIsOpen(false)}
-            className="btn-lift btn-primary mt-10 self-start"
-          >
-            Start a Project&nbsp;→
-          </a>
-          <p className="mt-8 font-mono-x text-[10px] uppercase tracking-[0.24em] text-ink-faint">
-            Full-Stack Developer / 2026
-          </p>
-        </div>
-      )}
     </header>
   )
 }
