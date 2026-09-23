@@ -47,7 +47,7 @@ export function Contact() {
           <button
             type="button"
             onClick={focusName}
-            className="btn-lift bg-ink px-8 py-4 font-mono-x text-[12px] uppercase tracking-[0.16em] text-paper transition-colors hover:bg-accent"
+            className="btn-lift btn-primary"
           >
             Start a Project&nbsp;&rarr;
           </button>
@@ -109,7 +109,7 @@ export function Contact() {
               <textarea name="message" aria-label="Message" value={formData.message} onChange={handleChange} rows={4} placeholder="What it is, pages or screens involved, timeline." className="mt-2 w-full resize-y border-0 border-b border-line-strong bg-transparent px-0 py-3 text-[16px] leading-7 text-ink placeholder:text-ink-faint transition-colors focus:border-accent" />
             </label>
             <div className="mt-8 flex flex-wrap items-center gap-5">
-              <button type="submit" className="btn-lift border border-ink px-7 py-3.5 font-mono-x text-[12px] uppercase tracking-[0.16em] text-ink transition-colors hover:border-accent hover:bg-accent hover:text-paper">
+              <button type="submit" className="btn-lift btn-secondary">
                 Send note
               </button>
               {status === 'success' && (

@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import type { Project } from '../data/projects'
 import { projects } from '../data/projects'
-import { ProjectPreview } from '../components/ProjectPreview'
 
 function StudyBlock({ index, title, body }: { index: string; title: string; body: string }) {
   return (
@@ -62,12 +61,12 @@ export function CaseStudy({ project }: { project: Project }) {
 
         <div className="mt-6 flex flex-wrap gap-3">
           {project.liveUrl ? (
-            <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn-lift bg-ink px-6 py-3 font-mono-x text-[12px] uppercase tracking-[0.16em] text-paper transition-colors hover:bg-accent">
+            <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn-lift btn-primary">
               Live demo
             </a>
           ) : null}
           {project.sourceUrl ? (
-            <a href={project.sourceUrl} target="_blank" rel="noreferrer" className="btn-lift border border-line-strong px-6 py-3 font-mono-x text-[12px] uppercase tracking-[0.16em] text-ink transition-colors hover:border-accent hover:text-accent">
+            <a href={project.sourceUrl} target="_blank" rel="noreferrer" className="btn-lift btn-secondary">
               Source code
             </a>
           ) : null}
@@ -83,15 +82,6 @@ export function CaseStudy({ project }: { project: Project }) {
           </p>
         ) : null}
       </header>
-
-      <section data-reveal className="mt-12">
-        <ProjectPreview project={project} aspectClass="aspect-[16/10] md:aspect-[21/9]" />
-        <p className="mt-4 max-w-3xl text-[14px] leading-7 text-ink-faint">
-          {project.isConcept
-            ? 'Representative rendering of the concept interface as designed.'
-            : 'Representative view of the working interface, derived from the implementation.'}
-        </p>
-      </section>
 
       <div className="mt-10">
         <StudyBlock index="01" title="Overview" body={project.description} />
@@ -128,7 +118,7 @@ export function CaseStudy({ project }: { project: Project }) {
         <p className="font-mono-x text-[11px] uppercase tracking-[0.3em] text-accent">Live demo</p>
         <div className="mt-4 flex flex-wrap items-center gap-4">
           {project.liveUrl ? (
-            <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn-lift bg-ink px-7 py-3.5 font-mono-x text-[12px] uppercase tracking-[0.16em] text-paper transition-colors hover:bg-accent">
+            <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn-lift btn-primary">
               Open live demo&nbsp;&rarr;
             </a>
           ) : (

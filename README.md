@@ -12,7 +12,7 @@ Positioning: Full-Stack Developer building polished websites, dashboards, and in
 2. **Process Strength Analyzer** — Full-stack systems/dashboard engineering
    - `liveUrl`: `https://client-ruddy-psi.vercel.app` (documented in the PSA README; live Windows data requires the authenticated tunnel to be online)
    - `sourceUrl`: not yet available
-3. **Car Racing Lap** — Interactive frontend experience
+3. **Race Metric** — Interactive frontend experience
    - `liveUrl`: not yet available
    - `sourceUrl`: not yet available
 

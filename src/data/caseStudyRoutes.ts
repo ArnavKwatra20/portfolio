@@ -7,7 +7,7 @@ export type CaseStudyRoute = {
 export const caseStudyRoutes: CaseStudyRoute[] = [
   { path: '#/projects/cafe-blues', slug: 'cafe-blues', label: 'Cafe Blues' },
   { path: '#/projects/process-strength-analyzer', slug: 'process-strength-analyzer', label: 'Process Strength Analyzer' },
-  { path: '#/projects/car-racing-lap', slug: 'car-racing-lap', label: 'Car Racing Lap' },
+  { path: '#/projects/car-racing-lap', slug: 'car-racing-lap', label: 'Race Metric' },
 ]
 
 export function getSlugFromHash(): string | null {

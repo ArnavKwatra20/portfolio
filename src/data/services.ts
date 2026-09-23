@@ -26,6 +26,6 @@ export const services: Service[] = [
     summary: 'Interactive frontend work where motion, data, and interface design carry the experience.',
     points: ['Interactive interfaces', 'Data visualization', 'Polished micro-interactions'],
     caseStudySlug: 'car-racing-lap',
-    caseStudyLabel: 'Car Racing Lap',
+    caseStudyLabel: 'Race Metric',
   },
 ]

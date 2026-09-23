@@ -22,6 +22,10 @@
   --color-accent-deep: #a8894f;
   --color-moss: #8fa583;
   --color-alert: #c9765a;
+  /* CTA plate: warm cream is the resting state of primary buttons. */
+  --color-cream: #f1e8d5;
+  --color-cream-deep: #e3d7bd;
+  --color-cream-ink: #11110f;
 }
 
 :root {
@@ -198,12 +202,64 @@ img {
   transform: translateY(0);
 }
 
+/* Shared button system: primary rests in the finished cream state,
+   hover only deepens the plate. Secondary stays outlined on the dark field.
+   Kept unlayered on purpose so button text beats the global `a { color: inherit }`. */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 0.875rem 1.75rem;
+  border-width: 1px;
+  border-style: solid;
+  font-family: 'IBM Plex Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-cream);
+  border-color: var(--color-cream);
+  color: var(--color-cream-ink);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-cream-deep);
+  border-color: var(--color-cream-deep);
+  color: var(--color-cream-ink);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border-color: var(--color-line-strong);
+  color: var(--color-ink);
+}
+
+.btn-secondary:hover {
+  background-color: transparent;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* Nav menu toggle only: same secondary treatment at compact size. */
+.btn-compact {
+  padding: 0.5rem 1rem;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+}
+
 .btn-lift {
   transition:
     transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    color 0.3s ease;
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .btn-lift:hover {

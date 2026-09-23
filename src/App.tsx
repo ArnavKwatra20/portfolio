@@ -32,7 +32,7 @@ function NotFound() {
     <div className="mx-auto max-w-3xl px-5 py-24 sm:px-8">
       <p className="font-mono-x text-[12px] uppercase tracking-[0.2em] text-ink-faint">Missing page</p>
       <h1 className="font-display mt-4 text-4xl tracking-tight text-ink">That page is not in this edition.</h1>
-      <a href="#/" className="mt-8 inline-block border border-ink bg-ink px-6 py-3 font-mono-x text-[12px] uppercase tracking-[0.14em] text-paper">
+      <a href="#/" className="btn-lift btn-primary mt-8">
         Back to portfolio
       </a>
     </div>

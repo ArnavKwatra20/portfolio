@@ -3,11 +3,11 @@ import type { Project } from './projectTypes'
 export const carRacingLap: Project = {
   id: 'car-racing-lap',
   slug: 'car-racing-lap',
-  title: 'Car Racing Lap',
+  title: 'Race Metric',
   valueProposition: 'An interactive racing telemetry experience built around lap rhythm and driver comparison.',
   category: 'Interactive frontend experience',
   shortDescription: 'APEX telemetry interface with deterministic lap simulation, charts, circuit map, and replay.',
-  description: 'Car Racing Lap presents the APEX fictional racing telemetry interface: driver, lap, and sector selection over deterministic telemetry with synchronized charts, a live SVG circuit map, replay controls, sector analysis, tires, strategy, and track views.',
+  description: 'Race Metric presents the APEX fictional racing telemetry interface: driver, lap, and sector selection over deterministic telemetry with synchronized charts, a live SVG circuit map, replay controls, sector analysis, tires, strategy, and track views.',
   tech: ['React', 'TypeScript', 'Recharts', 'SVG'],
   imageLabel: 'APEX racing telemetry engineering interface',
   accent: 'rose',

@@ -48,13 +48,13 @@ export function Hero() {
           <div className="fade-up d-6 flex flex-wrap items-center gap-4 md:col-span-5 md:justify-end">
             <a
               href="#work"
-              className="btn-lift bg-ink px-7 py-3.5 font-mono-x text-[12px] uppercase tracking-[0.16em] text-paper transition-colors hover:bg-accent"
+              className="btn-lift btn-primary"
             >
               View Selected Work
             </a>
             <a
               href="#contact"
-              className="btn-lift border border-line-strong px-7 py-3.5 font-mono-x text-[12px] uppercase tracking-[0.16em] text-ink transition-colors hover:border-accent hover:text-accent"
+              className="btn-lift btn-secondary"
             >
               Let&apos;s Work Together
             </a>

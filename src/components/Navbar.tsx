@@ -50,7 +50,7 @@ export function Navbar() {
           ))}
           <a
             href="#contact"
-            className="btn-lift bg-ink px-5 py-2.5 font-mono-x text-[11px] uppercase tracking-[0.16em] text-paper transition-colors hover:bg-accent"
+            className="btn-lift btn-primary"
           >
             Start a Project&nbsp;→
           </a>
@@ -58,7 +58,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="border border-line-strong px-4 py-2 font-mono-x text-[11px] uppercase tracking-[0.18em] text-ink transition-colors hover:border-accent hover:text-accent md:hidden"
+          className="btn-secondary btn-compact md:hidden"
           aria-expanded={isOpen}
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
           onClick={() => setIsOpen((value) => !value)}
@@ -90,7 +90,7 @@ export function Navbar() {
           <a
             href="#contact"
             onClick={() => setIsOpen(false)}
-            className="mt-10 self-start bg-ink px-6 py-3.5 font-mono-x text-[12px] uppercase tracking-[0.16em] text-paper"
+            className="btn-lift btn-primary mt-10 self-start"
           >
             Start a Project&nbsp;→
           </a>
