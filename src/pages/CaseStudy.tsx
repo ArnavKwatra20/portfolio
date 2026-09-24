@@ -61,12 +61,12 @@ export function CaseStudy({ project }: { project: Project }) {
 
         <div className="mt-6 flex flex-wrap gap-3">
           {project.liveUrl ? (
-            <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn-lift btn-primary">
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-lift btn-primary">
               Live demo
             </a>
           ) : null}
           {project.sourceUrl ? (
-            <a href={project.sourceUrl} target="_blank" rel="noreferrer" className="btn-lift btn-secondary">
+            <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="btn-lift btn-secondary">
               Source code
             </a>
           ) : null}
@@ -118,7 +118,7 @@ export function CaseStudy({ project }: { project: Project }) {
         <p className="font-mono-x text-[11px] uppercase tracking-[0.3em] text-accent">Live demo</p>
         <div className="mt-4 flex flex-wrap items-center gap-4">
           {project.liveUrl ? (
-            <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn-lift btn-primary">
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-lift btn-primary">
               Open live demo&nbsp;&rarr;
             </a>
           ) : (

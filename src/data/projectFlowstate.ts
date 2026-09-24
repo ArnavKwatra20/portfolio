@@ -1,0 +1,28 @@
+import type { Project } from './projectTypes'
+
+export const flowstateAI: Project = {
+  id: 'flowstate-ai',
+  slug: 'flowstate-ai',
+  title: 'FLOWSTATE AI',
+  valueProposition: 'Visual AI workflow automation for building, testing, and monitoring intelligent processes.',
+  category: 'AI / SaaS / Workflow Automation',
+  shortDescription: 'A visual workspace for composing, testing, and monitoring intelligent AI workflows.',
+  description: 'Flowstate AI is a visual AI workflow automation workspace for building, testing, and monitoring intelligent processes. Its graph-based editor brings triggers, AI steps, logic, data, and actions into one focused canvas, with run history and operational context close at hand.',
+  tech: ['React', 'TypeScript', 'Vite', 'React Router', 'Zustand', 'Lucide'],
+  imageLabel: 'Flowstate AI workflow automation workspace',
+  accent: 'cyan',
+  liveUrl: 'https://ai-workflow-theta-flax.vercel.app/',
+  sourceUrl: 'https://github.com/ArnavKwatra20/flowstate-ai',
+  status: 'Live application',
+  isConcept: false,
+  problem: 'Make intelligent processes understandable and operable without hiding the workflow graph, execution state, or run history behind disconnected tools.',
+  approach: 'Model each workflow as a visual graph of typed nodes and connections. Keep editing, execution, and monitoring in the same application so a process can be shaped, run, inspected, and refined from one workspace.',
+  designDirection: 'A restrained graphite workspace with a clear navigation rail, quiet surfaces, and a canvas that lets the workflow structure carry the visual weight. Operational data stays legible through measured typography, compact status treatments, and focused panels.',
+  technical: 'Built with React, TypeScript, Vite, React Router, Zustand, and Lucide. Workflow state is persisted locally, the editor supports graph editing and history, and the application keeps run data and operational views connected to the workflow model.',
+  challenges: 'Keeping a flexible graph editor understandable while giving execution status, run history, templates, integrations, and settings a coherent place in the product.',
+  decisions: 'Keep workflows, nodes, edges, and runs in explicit typed models. Persist workspace state locally, expose execution feedback alongside the graph, and make the canvas the primary surface rather than presenting a decorative dashboard mockup.',
+  outcome: 'A working visual AI workflow workspace for composing intelligent processes, running them, and reviewing the resulting activity from a focused application.',
+  technologies: ['React', 'TypeScript', 'Vite', 'React Router', 'Zustand', 'Lucide', 'Local persistence'],
+  features: ['Visual workflow canvas with typed nodes and connections', 'Node library for triggers, AI, logic, data, and actions', 'Workflow templates and reusable starting points', 'Run history with execution status and step details', 'Integrations and workspace settings views', 'Responsive, keyboard-aware editor interactions'],
+  result: 'Published Flowstate AI application; the live deployment is the primary destination from the portfolio.',
+}

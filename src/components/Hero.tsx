@@ -65,7 +65,7 @@ export function Hero() {
           {[
             ['03', 'Selected projects'],
             ['03', 'Case studies'],
-            ['01', 'Live deployment'],
+            ['03', 'Live deployments'],
             ['2026', 'Current edition'],
           ].map(([value, label]) => (
             <div

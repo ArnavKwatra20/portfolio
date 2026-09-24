@@ -19,13 +19,13 @@ export const services: Service[] = [
     summary: 'Functional web applications and dashboards: typed data, clear states, and interfaces that stay readable under real use.',
     points: ['React and TypeScript applications', 'Dashboards and data views', 'REST APIs with Express'],
     caseStudySlug: 'process-strength-analyzer',
-    caseStudyLabel: 'Process Strength Analyzer',
+    caseStudyLabel: 'Process Explorer',
   },
   {
     title: 'Digital Experiences',
     summary: 'Interactive frontend work where motion, data, and interface design carry the experience.',
     points: ['Interactive interfaces', 'Data visualization', 'Polished micro-interactions'],
-    caseStudySlug: 'car-racing-lap',
-    caseStudyLabel: 'Race Metric',
+    caseStudySlug: 'flowstate-ai',
+    caseStudyLabel: 'Flowstate AI',
   },
 ]

@@ -1,15 +1,3 @@
-export type CaseStudyRoute = {
-  path: string
-  slug: string
-  label: string
-}
-
-export const caseStudyRoutes: CaseStudyRoute[] = [
-  { path: '#/projects/cafe-blues', slug: 'cafe-blues', label: 'Cafe Blues' },
-  { path: '#/projects/process-strength-analyzer', slug: 'process-strength-analyzer', label: 'Process Strength Analyzer' },
-  { path: '#/projects/car-racing-lap', slug: 'car-racing-lap', label: 'Race Metric' },
-]
-
 export function getSlugFromHash(): string | null {
   if (typeof window === 'undefined') return null
   const hash = window.location.hash.replace(/^#/, '')

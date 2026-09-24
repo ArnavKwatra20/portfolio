@@ -6,9 +6,9 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
   return (
     <div data-reveal>
       <a
-        href={project.sourceUrl || project.liveUrl}
+        href={project.liveUrl || project.sourceUrl}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         className="group grid gap-3 border-b border-line py-8 transition-colors duration-200 hover:bg-field md:grid-cols-12 md:gap-8 md:py-10"
       >
         <span className="font-mono-x text-[11px] uppercase tracking-[0.2em] text-ink-faint md:col-span-1">
@@ -44,7 +44,7 @@ export function Projects() {
             </h2>
           </div>
           <p className="max-w-sm text-[14px] leading-7 text-ink-soft md:col-span-4 md:col-start-9">
-            No filler projects. Each entry links straight to the project repository.
+            No filler projects. Each entry links straight to the live project when available.
           </p>
         </header>
 

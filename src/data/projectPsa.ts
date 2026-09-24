@@ -3,7 +3,7 @@ import type { Project } from './projectTypes'
 export const processAnalyzer: Project = {
   id: 'process-strength-analyzer',
   slug: 'process-strength-analyzer',
-  title: 'Process Strength Analyzer',
+  title: 'Process Explorer',
   valueProposition: 'A local read-only Windows diagnostics workstation for observable system behavior.',
   category: 'Full-stack systems dashboard',
   shortDescription: 'A read-only developer diagnostics workstation for processes, resources, and network review.',

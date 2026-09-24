@@ -11,7 +11,7 @@ export const cafeBlues: Project = {
   tech: ['React', 'TypeScript', 'React Router', 'Custom CSS'],
   imageLabel: 'Cafe Blues editorial cafe concept',
   accent: 'amber',
-  liveUrl: '',
+  liveUrl: 'https://cafe-blues.vercel.app',
   sourceUrl: 'https://github.com/ArnavKwatra20/cafe-blues',
   status: 'Portfolio concept',
   isConcept: true,
